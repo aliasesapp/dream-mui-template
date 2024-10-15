@@ -21,7 +21,8 @@ export const getTheme = (mode: 'light' | 'dark'): ThemeOptions => ({
             main: '#FC7545',
           },
           background: {
-            default: '#FFFFFF',
+            default: '#F6F8FA',
+            paper: '#FFFFFF',
           },
           text: {
             primary: '#050A1A',
@@ -38,6 +39,7 @@ export const getTheme = (mode: 'light' | 'dark'): ThemeOptions => ({
           },
           background: {
             default: '#050A1A',
+            paper: '#132C47',
           },
           text: {
             primary: '#FFFFFF',
