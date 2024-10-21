@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import SiteHeader from "@/components/SiteHeader";
 import { CustomThemeProvider } from "@/contexts/ThemeContext";
 import Container from "@mui/material/Container";
+import FullstoryProvider from "@/contexts/Fullstory";
 
 const iconUrl =
   "https://raw.githubusercontent.com/aliasesapp/dreamstack-images/main/images/favicon";
@@ -48,12 +49,14 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <CustomThemeProvider>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <SiteHeader />
-            <Container maxWidth="xl" sx={{ py: { xs: 2, md: 4 } }}>
-              {props.children}
-            </Container>
+            <FullstoryProvider>
+              {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+              <CssBaseline />
+              <SiteHeader />
+              <Container maxWidth="xl" sx={{ py: { xs: 2, md: 4 } }}>
+                {props.children}
+              </Container>
+            </FullstoryProvider>
           </CustomThemeProvider>
         </AppRouterCacheProvider>
       </body>
